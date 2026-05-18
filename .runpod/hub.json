@@ -1,0 +1,22 @@
+{
+  "title": "FireRedTTS-2 (pat-pivot fork)",
+  "description": "Long-form streaming TTS for multi-speaker dialogue. Apache 2.0. Supports 3+ minute conversations with up to 4 speakers via inline [S1]/[S2] labels.",
+  "type": "serverless",
+  "category": "audio",
+  "config": {
+    "runsOn": "GPU",
+    "containerDiskInGb": 25,
+    "gpuTypes": [
+      "NVIDIA L4",
+      "NVIDIA L40S",
+      "NVIDIA RTX A6000",
+      "NVIDIA RTX 4090"
+    ],
+    "presets": [
+      {
+        "name": "Default",
+        "defaults": {}
+      }
+    ]
+  }
+}

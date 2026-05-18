@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "name": "tiny_dialogue",
+      "input": {
+        "text": "[S1] Hey welcome back. [S2] Yeah, what we got today?"
+      },
+      "timeout": 600000
+    }
+  ],
+  "config": {
+    "gpuTypeId": "NVIDIA L4",
+    "gpuCount": 1,
+    "env": [],
+    "allowedCudaVersions": ["11.8.0", "12.1.0"]
+  }
+}
