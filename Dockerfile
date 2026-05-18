@@ -27,11 +27,7 @@ RUN pip install --no-cache-dir \
 COPY . /app/
 RUN pip install --no-cache-dir -e /app
 
-# Pre-download model weights into image so cold start is fast.
-# Skip if HF_HUB_TOKEN env is needed for gated models (FireRedTTS-2 is open).
-RUN python -c "from huggingface_hub import snapshot_download; \
-    snapshot_download(repo_id='FireRedTeam/FireRedTTS2', \
-                      local_dir='/app/pretrained_models/FireRedTTS2', \
-                      local_dir_use_symlinks=False)"
+# Model weights download on first worker boot (handler.py).
+# Keeps image small (~3GB) and build fast; trade-off is ~30-60s extra cold start.
 
 CMD ["python", "-u", "handler.py"]
