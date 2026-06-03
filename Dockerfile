@@ -8,7 +8,7 @@ WORKDIR /app
 
 # System deps for audio I/O
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    git ffmpeg libsndfile1 \
+    git ffmpeg libsndfile1 curl ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # Python deps. Match FireRedTTS-2 docker recipe + RunPod + HF downloader.
